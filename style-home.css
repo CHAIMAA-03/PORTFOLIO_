@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: ghostwhite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /*scorrimento piano piano*/
+}
+
+/*HEADER e MENU*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    position: sticky; /*resta visibile solo finché non scorre fuori dal suo contenitore*/
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    padding-right: 20px;
+    font-size: 19px;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: #530149;
+    text-decoration-thickness: 3px;
+    font-size: 20px;
+}
+
+.logo {
+    padding-left: 20px;
+    width: auto;
+    height: 85px;
+}
+
+/*CHI SONO IO*/
+.intro {
+    padding: 60px 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('pianeta.jpg');
+    background-size: cover; 
+    height: 400px;
+}
+
+.intro h1 {
+    text-align: center;
+    margin-bottom: 0;
+    color: white;
+}
+
+.intro p {
+    text-align: center;
+    color: white;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+/*LE SEZIONI PRINCIPALI (BLOCCHI)*/
+.cerchi {
+    padding: 80px 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0px;
+    flex-wrap: wrap;
+}
+
+.cerchio-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.cv {
+    background-image: url('cv.jpg');
+}
+
+.anime {
+    background-image: url('anime.jpeg');
+}
+
+.musica {
+    background-image: url('musica.jfif');
+}
+
+.cerchi h2 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.cerchi h3 {
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.view {
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;  
+    border-radius: 8px; 
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
+    padding: 6px 10px;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.cerchio-img:hover .view{
+    opacity: 1;
+}
+
+.cerchio-img::after {
+    content: ""; /*::after (e ::before) NON esistono davvero nell'HTML. Sono come fantasmi creati dal CSS. Se non scrivi content, il fantasma non appare. Se non appare, non puoi metterci colore, dimensioni, overlay, niente.*/
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.cerchio-img:hover::after {
+    opacity: 1;
+}
+
+.cerchio-img:hover {
+    transform: scale(1.05); /*Quando passi col mouse, il cerchio fa un micro zoom.*/
+}
+
+/*PERCHE' QUESTO SITO?*/
+.scopo h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.scopo p {
+    text-align: center;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 5%;
+    line-height: 1.2;
+}
+
+/*FOOTER e CONTATTI*/
+footer {
+    background-color: #17001d;
+    color: white;
+    padding: 40px 30px;
+}
+
+footer #contatti {
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+footer table { 
+    margin-bottom: 20px;
+}
+
+footer table tr td {
+    vertical-align: middle;
+}
+
+footer table td.icona {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+    justify-content: center;
+}
+
+footer .footer-note {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+footer .link-note {
+    display: flex;
+    flex-direction: column;        /* link sopra, nota sotto */
+    align-items: center;           /* centra tutto orizzontalmente */
+    text-align: center;
+}
+
+footer .tab-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20%;
+    padding: 20px 30px;
+}
+
+footer .copyright { 
+    text-align: center;
+    padding-top: 0px;
+    color: gray;
+}
+
+
